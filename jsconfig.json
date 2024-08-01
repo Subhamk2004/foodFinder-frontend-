@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "aceternity/components": ["./components/*"],
+        "aceternity/lib/utils": ["./lib/utils"]
+      },
+      "jsx": "react"
+    },
+    "include": ["src/**/*"]
+  }
