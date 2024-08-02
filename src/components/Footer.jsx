@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 function Footer() {
   return (
-    <div className='w-screen h-32 bg-gray-500 opacity-90 fixed z-10 bottom-0 rounded-tl-xl rounded-tr-xl'>
+    <div className='w-screen h-32 wheat-color opacity-90 fixed z-10 bottom-0 rounded-tl-3xl rounded-tr-3xl'>
       <div className='flex -flex-row w-full justify-center mb-4'>
         <ul className='flex flex-row gap-5 text-lg mt-5'>
           <li>
@@ -24,7 +24,7 @@ function Footer() {
         </ul>
       </div>
       <div className='w-full flex p-2 justify-center flex-row gap-3'>
-        <NavLink to="/" className="bg-green-200 p-1 rounded-lg shadow-green-500  shadow-md ">
+        <NavLink to="/" className="bg-orange-600 p-1 rounded-lg shadow-orange-900  shadow-md ">
           <p className='font-bold text-2xl italic text-center text-black'>FoodFinder</p>
         </NavLink>
         <div className='flex justify-center items-center text-xl'>
