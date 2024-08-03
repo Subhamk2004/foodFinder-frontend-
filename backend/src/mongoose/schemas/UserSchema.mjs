@@ -9,7 +9,7 @@ let UserSchema = mongoose.Schema({
     email: {
         type: mongoose.Schema.Types.String,
         required: true,
-        unique: true
+        unique:true
     }, 
     password: {
         type: mongoose.Schema.Types.String,
@@ -18,11 +18,9 @@ let UserSchema = mongoose.Schema({
     location: {
         type: mongoose.Schema.Types.String,
         required: true
-    }
+    } 
 })
 
-let User = mongoose.model('User',UserSchema);
-export default User;
-
+export let User = mongoose.model('User',UserSchema);
 // this schema is the format of what data is expected
 // check validationSchemas for how to validate each property of the fields of this schema

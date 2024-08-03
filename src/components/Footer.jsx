@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 function Footer() {
   return (
-    <div className='w-screen h-32 wheat-color opacity-90 fixed z-10 bottom-0 rounded-tl-3xl rounded-tr-3xl'>
+    <div className='w-screen h-32 wheat-color  fixed z-10 bottom-0 rounded-tl-3xl rounded-tr-3xl'>
       <div className='flex -flex-row w-full justify-center mb-4'>
         <ul className='flex flex-row gap-5 text-lg mt-5'>
           <li>
