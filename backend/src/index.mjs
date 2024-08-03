@@ -8,11 +8,11 @@ import logoutRouter from './routes/logoutRouter.mjs'
 
 
 const app = express();
-
+const allowedOrigins = process.env.ALLOWED_ORIGINS || 'http://localhost:5173';
 app.use(cors({
-    origin: 'http://localhost:5173',
-    credentials: true
-  }));
+  origin: allowedOrigins.split(','),
+  credentials: true,
+}));
 const PORT = process.env.PORT || 5000;
 app.use(sessionDatabaseHandler);
 app.use(userRouter);
