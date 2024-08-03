@@ -8,9 +8,12 @@ import logoutRouter from './routes/logoutRouter.mjs'
 import dotenv from 'dotenv';
 
 dotenv.config();
+console.log("Allowed Origins:", process.env.ALLOWED_ORIGINS);
+
 
 const app = express();
-const allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : ['http://localhost:5173'];
+// const allowedOrigins = "https://food-finder-lime.vercel.app" ? "https://food-finder-lime.vercel.app".split(',') : ['http://localhost:5173'];
+let allowedOrigins = 'https://food-finder-lime.vercel.app';
 
 app.use(cors({
   origin: function (origin, callback) {
