@@ -18,12 +18,12 @@ function Navbar() {
     dispatch(logoutUser());
   }
 
-  let navActiveTransition = ' bg-white  text-green-950 opacity-95 rounded-lg p-1  transition-all duration-300 ease-in-out border-b-4 border-green-800 shadow-md shadow-green-500';
+  let navActiveTransition = ' bg-white  text-green-950 opacity-95 rounded-lg p-1  transition-all duration-300 ease-in-out border-b-4 border-green-800 shadow-md shadow-lime-500';
   let navInActiveTransition = 'text-black transition-all duration-200 ease-in-out border-0 border-green-800 rounded-lg p-1  hover:border hover:border-black hover:p-2 hover:bg-white';
 
   return (
     <div className='w-full h-auto sticky top-0 p-3 z-10'>
-      <nav className='p-2 w-full bg-green-400 bg-opacity-90 flex flex-row rounded-xl overflow-hidden hover:p-3 transition-all duration-300 ease-in-out border border-black '>
+      <nav className='p-2 w-full bg-lime-400 bg-opacity-90 flex flex-row rounded-xl overflow-hidden hover:p-3 transition-all duration-300 ease-in-out border border-black '>
         <ul className='flex flex-row gap-5 text-lg w-3/4 '>
           <li className=''>
             <NavLink to="/"

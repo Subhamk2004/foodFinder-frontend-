@@ -34,7 +34,7 @@ function Carousel() {
                         type='search' />
                     <button type='submit'
                     onClick={handleSubmitSearch}
-                        className='bg-green-400 p-2  rounded-r-lg text-lg '>
+                        className='bg-lime-400 p-2  rounded-r-lg text-lg '>
                         Search
                     </button>
                 </div>
