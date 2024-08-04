@@ -18,12 +18,12 @@ function Navbar() {
     dispatch(logoutUser());
   }
 
-  let navActiveTransition = ' bg-orange-500 bg-opacity-80 text-orange-950 opacity-95 rounded-lg p-1  transition-all duration-300 ease-in-out  border-b-4 border-orange-900 shadow-md shadow-gray-800';
-  let navInActiveTransition = 'text-black transition-all duration-300 ease-in-out border-black';
+  let navActiveTransition = ' bg-white  text-green-950 opacity-95 rounded-lg p-1  transition-all duration-300 ease-in-out border-b-4 border-green-800 shadow-md shadow-green-500';
+  let navInActiveTransition = 'text-black transition-all duration-200 ease-in-out border-0 border-green-800 rounded-lg p-1  hover:border hover:border-black hover:p-2 hover:bg-white';
 
   return (
-    <div className='w-full h-auto sticky top-0 z-10'>
-      <nav className='p-2 w-full wheat-color flex flex-row rounded-bl-xl rounded-br-xl overflow-hidden hover:p-5 transition-all duration-300 ease-in-out'>
+    <div className='w-full h-auto sticky top-0 p-3 z-10'>
+      <nav className='p-2 w-full bg-green-400 bg-opacity-90 flex flex-row rounded-xl overflow-hidden hover:p-3 transition-all duration-300 ease-in-out border border-black '>
         <ul className='flex flex-row gap-5 text-lg w-3/4 '>
           <li className=''>
             <NavLink to="/"
@@ -57,7 +57,7 @@ function Navbar() {
         </ul>
         <div className='w-1/4 flex justify-end'>
           <NavLink to="/" className="w-full flex justify-end">
-            <p className='font-bold text-2xl rounded-lg italic shadow-xl shadow-gray-700  text-center bg-orange-500 bg-opacity-80 pr-1 pl-1'>FoodFinder</p>
+            <p className='font-bold text-2xl rounded-lg italic shadow-md shadow-green-700  text-center bg-white bg-opacity-90 pr-1 pl-1'>FoodFinder</p>
           </NavLink>
         </div>
       </nav>

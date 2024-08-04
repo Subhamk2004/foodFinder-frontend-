@@ -71,12 +71,18 @@
 #root{
   width:100vw;
   height:100vh;
-  background: linear-gradient(to bottom, #EAE7DC, #D8C3A5);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #fcfffd 50%, #fdfffe);
 }
 /* Create a custom CSS class */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+.max-carousel-h{
+  max-height: 500px;
+}
+.min-card-w{
+  min-width: 350px;
 }
 
 .no-scrollbar {
@@ -109,3 +115,9 @@ body{
   border-bottom: 4px solid #333; /* Replace with the actual orange-900 color */
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 /* } */ 
+
+@media screen and (max-width: 500px) {
+   .for-mobile-bg{
+    background-color: greenyellow;
+   }
+}
