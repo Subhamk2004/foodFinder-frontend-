@@ -7,7 +7,7 @@ function useAuthCheck () {
     let dispatch = useDispatch();
     let [data, setData] = useState();
     let authStatusChecker = async() => {
-        let response = await fetch('http://localhost:5000/loginuser/status', {
+        let response = await fetch('https://food-finder-backend-guie.onrender.com/loginuser/status', {
             method:'GET',
             credentials:'include'
         })
