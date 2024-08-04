@@ -10,7 +10,7 @@ function Navbar() {
   console.log(isAuthenticated, email);
 
   let logoutCurrentUser = async () => {
-    let response = await fetch('http://localhost:5000/logout', {
+    let response = await fetch('https://food-finder-backend-guie.onrender.com/logout', {
       method: 'POST',
       credentials: 'include'
     })
