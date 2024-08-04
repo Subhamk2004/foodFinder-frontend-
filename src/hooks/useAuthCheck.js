@@ -6,22 +6,34 @@ import { authenticateUser } from '../reduxSilces/UserSlice.js';
 function useAuthCheck() {
     let dispatch = useDispatch();
     let [data, setData] = useState();
-    let authStatusChecker = async () => {
-        let response = await fetch('https://food-finder-backend-guie.onrender.com/loginuser/status', {
-            method: 'GET',
-            credentials: 'include',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        let data = await response.json();
-        console.log(data);
+    const authStatusChecker = async () => {
+        try {
+            let response = await fetch('https://food-finder-backend-guie.onrender.com/loginuser/status', {
+                method: 'GET',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
 
-        if (data.email) {
-            setData(data);
-            dispatch(authenticateUser(data));
+            if (!response.ok) {
+                // Handle HTTP errors
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            let data = await response.json();
+            console.log(data);
+
+            if (data.email) {
+                setData(data);
+                dispatch(authenticateUser(data));
+            } else {
+                console.error('No email in response data', data);
+            }
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
         }
-    }
+    };
     useEffect(() => {
         authStatusChecker();
     }, []);
