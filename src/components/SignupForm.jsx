@@ -19,7 +19,7 @@ function SignupForm({
 }) {
     return (
         <div className='w-full h-full mt-1 flex flex-col items-center overflow-scroll no-scrollbar mb-7 text-gray-900'>
-            <div className='w-2/3 max-w-xl mt-10 p-8 border border-gray-500 rounded-2xl bg-lime-200 bg-opacity-90 flex flex-col'>
+            <div className='w-11/12 sm:w-2/3 max-w-xl mt-10 p-8 border border-gray-500 rounded-2xl bg-lime-200 bg-opacity-90 flex flex-col'>
                 <div className=''>
                     <h1 className='text-xl'>
                         Welcome to <span className=' font-bold italic'>FoodFinder</span>

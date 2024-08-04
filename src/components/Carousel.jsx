@@ -28,17 +28,17 @@ function Carousel() {
                 <img src={Img}
                     className=' h-full w-full max-w-8xl custom-max-height'
                 />
-                <form className='absolute top-10 w-2/3 flex items-center justify-center'>
-                <div className='w-full flex flex-row  shadow-xl shadow-black rounded-xl overflow-hidden'>
-                    <input placeholder='Search' className='w-full p-2 rounded-l-lg bg-white  focus:outline-none text-lg'
-                        type='search' />
-                    <button type='submit'
-                    onClick={handleSubmitSearch}
-                        className='bg-lime-400 p-2  rounded-r-lg text-lg '>
-                        Search
-                    </button>
-                </div>
-                    
+                <form className='absolute top-10 w-11/12 sm:w-2/3 flex items-center justify-center'>
+                    <div className='w-full flex flex-row  shadow-xl shadow-black rounded-xl overflow-hidden'>
+                        <input placeholder='Search' className='w-full p-2 rounded-l-lg bg-white  focus:outline-none text-lg'
+                            type='search' />
+                        <button type='submit'
+                            onClick={handleSubmitSearch}
+                            className='bg-lime-400 p-2  rounded-r-lg text-lg '>
+                            Search
+                        </button>
+                    </div>
+
                 </form>
             </div>
         </div>
