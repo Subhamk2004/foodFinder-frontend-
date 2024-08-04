@@ -3,18 +3,21 @@ import { useDispatch } from "react-redux";
 import { authenticateUser } from '../reduxSilces/UserSlice.js';
 
 
-function useAuthCheck () {
+function useAuthCheck() {
     let dispatch = useDispatch();
     let [data, setData] = useState();
-    let authStatusChecker = async() => {
+    let authStatusChecker = async () => {
         let response = await fetch('https://food-finder-backend-guie.onrender.com/loginuser/status', {
-            method:'GET',
-            credentials:'include'
+            method: 'GET',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
         let data = await response.json();
         console.log(data);
-        
-        if(data.email) {
+
+        if (data.email) {
             setData(data);
             dispatch(authenticateUser(data));
         }
@@ -22,7 +25,7 @@ function useAuthCheck () {
     useEffect(() => {
         authStatusChecker();
     }, []);
-    return {data};
+    return { data };
 }
 
 export default useAuthCheck;
