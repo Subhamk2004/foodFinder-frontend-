@@ -20,9 +20,9 @@ export const userSlice = createSlice({
         authenticateUser: (state, action) => {
             console.log(action.payload.email);
             
-            state.email = action.payload.email
-            state.firstname = action.payload.firstname
-            state.location = action.payload.location
+            state.email = action.payload.user.email
+            state.firstname = action.payload.user.firstname
+            state.location = action.payload.user.location
             state.isAuthenticated = true
         }
     }
