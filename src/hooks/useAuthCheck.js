@@ -24,7 +24,7 @@ function useAuthCheck() {
             let data = await response.json();
             console.log(data);
 
-            if (data.email) {
+            if (data) {
                 setData(data);
                 dispatch(authenticateUser(data));
             } else {

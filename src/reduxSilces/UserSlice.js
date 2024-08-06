@@ -3,7 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 let initialState = {
     user:{
         email:"",
-        isAuthenticated:false
+        isAuthenticated:false,
+        firstname:"",
+        location:""
     }
 }
 
@@ -19,6 +21,8 @@ export const userSlice = createSlice({
             console.log(action.payload.email);
             
             state.email = action.payload.email
+            state.firstname = action.payload.firstname
+            state.location = action.payload.location
             state.isAuthenticated = true
         }
     }
