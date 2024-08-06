@@ -21,7 +21,6 @@ function Card({
     let [itemQuantity, setItemQuantity] = useState('1');
 
     let addToCart = async (imgId, itemname) => {
-        email = 'subham@gmail.com';
         console.log(email, itemQuantity, itemPotion, itemPrice, imgId, itemname);
         let response = await fetch('https://food-finder-backend-guie.onrender.com/cart', {
             method: 'POST',
