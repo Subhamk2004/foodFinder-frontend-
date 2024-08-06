@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx';
 import './App.css'
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
+import Cart from './pages/Cart.jsx';
 function App() {
   let router = createBrowserRouter([
     {
@@ -29,7 +30,11 @@ function App() {
         ,
         {
           path: 'signup',
-          element: <Signup/>
+          element: <Signup />
+        },
+        {
+          path: 'cart',
+          element: <Cart />
         }
       ]
     }

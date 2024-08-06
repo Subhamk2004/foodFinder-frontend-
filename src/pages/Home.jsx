@@ -8,7 +8,14 @@ function Home() {
   useAuthCheck();
   let { foodItems } = useFoodItems();
   if (foodItems.length > 0) console.log(foodItems);
-
+  
+  let tempPrices = [150, 200, 300];
+  let tempPotions = ['quarter', 'half', 'full'];
+  let fullObj = {
+    'quarter': 150,
+    'half': 200,
+    'full': 300,
+  }
 
 
   return (
@@ -20,8 +27,9 @@ function Home() {
           CardImg={item.img}
           ItemName={item.name}
           Description={item.description}
-          Price={item.options[0].full ? item.options[0].full : item.options[0].regular}
+          price={Object.values(item.options[0])}
           potion={Object.keys(item.options[0])}
+          full={item.options[0]}
           />
         ))}
       </div>
