@@ -16,7 +16,10 @@ function UserDetailCard({
                 <p className='bg-gray-200 mt-2 p-1 rounded-lg'>Hello,  <span className='font-semibold text-xl text-lime-900'>{firstname}</span></p>
                 <p className='bg-gray-200 mt-2 p-1 rounded-lg'> {email}</p>
                 <p className='bg-gray-200 mt-2 p-1 rounded-lg'> {location}</p>
-                <Link className='gap-2 items-center flex bg-gray-200 mt-2 p-1 rounded-lg' to="/cart">Cart <img className='h-5' src={cart} /></Link>
+                <Link className='gap-2 items-center flex bg-gray-200 mt-2 p-1 rounded-lg relative' to="/cart">Cart
+                    <img className='h-5' src={cart} />
+                    <p className=' text-white bg-lime-600 rounded-md h-5 w-5 flex items-center justify-center'>{total}</p>
+                </Link>
             </div>
         </div>
     )

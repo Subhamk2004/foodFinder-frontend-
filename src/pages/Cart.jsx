@@ -10,7 +10,7 @@ function Cart() {
         let finalPrice = 0;
         if (cart.length > 0) {
             cart.forEach((item) => {
-                finalPrice += item.price;
+                finalPrice += item.price*item.quantity;
             });
         }
         setTotalPrice(finalPrice);
