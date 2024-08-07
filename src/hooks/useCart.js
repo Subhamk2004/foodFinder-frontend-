@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteItem, addToCart } from "../reduxSilces/cartSlice.js";
 
 let useCart = () => {
     let { email } = useSelector(state => state.user)
-    let [cart, setCart] = useState([]);  // Initialize with an empty array
+    let {total} = useSelector(state => state.cart)
+    console.log(total);
     
-    // For testing purposes only. Remove this in production.
+    let dispatch = useDispatch();
+    
+    let [cart, setCart] = useState([]);
     let fetchCart = async () => {
         try {
             let response = await fetch(`https://food-finder-backend-guie.onrender.com/cart?email=${encodeURIComponent(email)}`, {
@@ -18,6 +22,8 @@ let useCart = () => {
             let data = await response.json();
             setCart(data);
             console.log("Fetched cart data:", data);
+            dispatch(addToCart(data.length));
+
         } catch (error) {
             console.log('Error fetching cart', error);
             setCart([]);  // Set to empty array in case of error
@@ -28,7 +34,7 @@ let useCart = () => {
         if (email) {
             fetchCart();
         }
-    }, [email])
+    }, [email,total])
 
     return { cart };
 }

@@ -12,8 +12,8 @@ function Navbar() {
 
   let dispatch = useDispatch();
   let { isAuthenticated, email, firstname, location } = useSelector(state => state.user);
-  console.log(isAuthenticated, email, firstname, location);
-
+  let { total } = useSelector(state => state.cart);
+  console.log(total);
   let logoutCurrentUser = async () => {
     let response = await fetch('https://food-finder-backend-guie.onrender.com/logout', {
       method: 'POST',
@@ -68,12 +68,15 @@ function Navbar() {
           <button className='shadow-md shadow-lime-600 rounded-lg'
             onClick={showUserFnc}
           >
-            <img className='h-9 min-w-9' src={userIcon} />
+            <div className='w-9 h-9 relative'>
+              <img className='h-9 min-w-9' src={userIcon} />
+              <p className='-top-1 left-7 absolute text-white bg-gray-600 rounded-full h-5 w-5 flex items-center justify-center'>{total}</p>
+            </div>
           </button>
-          {showUser ? <UserDetailCard 
-          firstname={firstname}
-          location={location}
-          email={email}
+          {showUser ? <UserDetailCard
+            firstname={firstname}
+            location={location}
+            email={email}
           /> : null}
 
           <NavLink to="/" className="flex justify-end">
