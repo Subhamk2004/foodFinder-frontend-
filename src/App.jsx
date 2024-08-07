@@ -5,6 +5,8 @@ import './App.css'
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import Cart from './pages/Cart.jsx';
+import About from './pages/About.jsx';
+import Contact from './pages/Contact.jsx';
 function App() {
   let router = createBrowserRouter([
     {
@@ -17,11 +19,11 @@ function App() {
         },
         {
           path: 'about',
-          element: <h1>About</h1>
+          element: <About/>
         },
         {
           path: 'contact',
-          element: <h1>Contact Us</h1>
+          element: <Contact/>
         },
         {
           path: 'login',

@@ -32,8 +32,8 @@ function Navbar() {
 
   return (
     <div className='w-full h-auto sticky top-0 p-1 sm:p-3 z-10'>
-      <nav className='p-2 w-full bg-lime-400 bg-opacity-90 flex flex-row rounded-xl  sm:hover:p-3 transition-all duration-300 ease-in-out border border-black '>
-        <ul className='flex flex-row items-center gap-3 sm:gap-5 text-lg w-3/4 '>
+      <nav className='p-1 sm:p-2 w-full bg-lime-400 bg-opacity-90 flex flex-row rounded-xl  sm:hover:p-3 transition-all duration-300 ease-in-out border border-black '>
+        <ul className='flex flex-row items-center gap-1 sm:gap-5 text-lg w-3/4 '>
           <li className=''>
             <NavLink to="/"
               className={({ isActive }) => isActive ?
@@ -65,14 +65,14 @@ function Navbar() {
             null}
         </ul>
         <div className='w-1/4 flex justify-end gap-6 relative'>
-          <button className='shadow-md shadow-lime-600 rounded-lg'
+          {isAuthenticated?  <button className='shadow-md shadow-lime-600 rounded-lg'
             onClick={showUserFnc}
           >
             <div className='w-9 h-9 relative'>
               <img className='h-9 min-w-9' src={userIcon} />
               <p className='-top-1 left-7 absolute text-white bg-gray-600 rounded-full h-5 w-5 flex items-center justify-center'>{total}</p>
             </div>
-          </button>
+          </button> : null}
           {showUser ? <UserDetailCard
             firstname={firstname}
             location={location}
