@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import DefaultImg from '../assets/burger.jpg';
 import cart from '../assets/cart.png';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { refreshCart } from '../reduxSilces/cartSlice.js';
 
 function Card({
     CardImg = DefaultImg,
@@ -12,6 +13,7 @@ function Card({
     Description = 'Made using Indian masalas and Basmati rice. Barbequed pieces of Paneer…'
 }) {
 
+    let dispatch = useDispatch();
     let {email} = useSelector(state => state.user)
     console.log(email);
     
@@ -103,6 +105,7 @@ function Card({
                     let itemname = parent.children[1].children[0].children[0].id;
                     
                     addToCart(imgId, itemname);
+                    dispatch(refreshCart());
                 }}
             >
                 Add to Cart

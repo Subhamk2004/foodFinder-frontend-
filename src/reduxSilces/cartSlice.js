@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
-    total: Number(0)
+    total: Number(0),
+    refresh: false
 }
 
 export const cartSlice = createSlice({
@@ -12,6 +13,9 @@ export const cartSlice = createSlice({
             console.log(action.payload);
             state.total = action.payload;
         },
+        refreshCart: (state, action) => {
+            state.refresh = !state.refresh;
+        },
         deleteItem: (state, action) => {
             console.log(action.payload);
             state.total = Math.max(0, state.total - 1);
@@ -21,6 +25,6 @@ export const cartSlice = createSlice({
     }
 })
 
-export const {deleteItem, addToCart} = cartSlice.actions;
+export const {deleteItem, addToCart, refreshCart} = cartSlice.actions;
 let cartReducer = cartSlice.reducer;
 export default cartReducer;

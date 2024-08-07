@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 function Cart() {
     const { cart } = useCart();
     let [totalPrice, setTotalPrice] = useState();
-    let finalPrice = Number(0);
 
     useEffect(() => {
         let finalPrice = 0;

@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Card from '../components/Card.jsx'
 import Carousel from '../components/Carousel.jsx'
 import useAuthCheck from '../hooks/useAuthCheck.js'
 import useFoodItems from '../hooks/useFoodItems.js'
+import useCart from '../hooks/useCart.js'
 
 function Home() {
   useAuthCheck();
+  useCart();
+
   let { foodItems } = useFoodItems();
   if (foodItems.length > 0) console.log(foodItems);
-  
+
   let tempPrices = [150, 200, 300];
   let tempPotions = ['quarter', 'half', 'full'];
   let fullObj = {
@@ -24,12 +27,12 @@ function Home() {
       <div className='flex flex-wrap justify-around gap-y-8 gap-x-2'>
         {foodItems.map((item) => (
           <Card
-          CardImg={item.img}
-          ItemName={item.name}
-          Description={item.description}
-          price={Object.values(item.options[0])}
-          potion={Object.keys(item.options[0])}
-          full={item.options[0]}
+            CardImg={item.img}
+            ItemName={item.name}
+            Description={item.description}
+            price={Object.values(item.options[0])}
+            potion={Object.keys(item.options[0])}
+            full={item.options[0]}
           />
         ))}
       </div>

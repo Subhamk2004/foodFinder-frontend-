@@ -4,8 +4,9 @@ import { deleteItem, addToCart } from "../reduxSilces/cartSlice.js";
 
 let useCart = () => {
     let { email } = useSelector(state => state.user)
-    let {total} = useSelector(state => state.cart)
+    let {total, refresh} = useSelector(state => state.cart)
     console.log(total);
+    console.log(refresh);
     
     let dispatch = useDispatch();
     
@@ -34,7 +35,7 @@ let useCart = () => {
         if (email) {
             fetchCart();
         }
-    }, [email,total])
+    }, [email,total, refresh])
 
     return { cart };
 }
