@@ -13,7 +13,6 @@ function CartCard({
     cartid,
     Description = 'Made using Indian masalas and Basmati rice. Barbequed pieces of Paneer…'
 }) {
-
     let dispatch = useDispatch();
     let deleteItem = async (cartid) => {
         let response = await fetch(`https://food-finder-backend-guie.onrender.com/cart`, {
