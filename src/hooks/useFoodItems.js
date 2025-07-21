@@ -5,7 +5,7 @@ export default function useFoodItems() {
 
     async function fetchFoodItems() {
         try {
-            let response = await fetch('https://food-finder-backend-guie.onrender.com/fooditems');
+            let response = await fetch('https://food-finder-backend-1.onrender.com/fooditems');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

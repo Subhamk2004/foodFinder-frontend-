@@ -16,7 +16,7 @@ function Signup() {
     let handleSubmit = async (e) => {
         console.log('request sent');
         e.preventDefault();
-        let response = await fetch('https://food-finder-backend-guie.onrender.com/registeruser', {
+        let response = await fetch('https://food-finder-backend-1.onrender.com/registeruser', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

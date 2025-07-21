@@ -15,7 +15,7 @@ function Navbar() {
   let { total } = useSelector(state => state.cart);
   console.log(total);
   let logoutCurrentUser = async () => {
-    let response = await fetch('https://food-finder-backend-guie.onrender.com/logout', {
+    let response = await fetch('https://food-finder-backend-1.onrender.com/logout', {
       method: 'POST',
       credentials: 'include'
     })

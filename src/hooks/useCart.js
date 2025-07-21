@@ -13,7 +13,7 @@ let useCart = () => {
     let [cart, setCart] = useState([]);
     let fetchCart = async () => {
         try {
-            let response = await fetch(`https://food-finder-backend-guie.onrender.com/cart?email=${encodeURIComponent(email)}`, {
+            let response = await fetch(`https://food-finder-backend-1.onrender.com/cart?email=${encodeURIComponent(email)}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

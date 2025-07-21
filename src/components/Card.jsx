@@ -24,7 +24,7 @@ function Card({
 
     let addToCart = async (imgId, itemname) => {
         console.log(email, itemQuantity, itemPotion, itemPrice, imgId, itemname);
-        let response = await fetch('https://food-finder-backend-guie.onrender.com/cart', {
+        let response = await fetch('https://food-finder-backend-1.onrender.com/cart', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

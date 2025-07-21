@@ -8,7 +8,7 @@ function useAuthCheck() {
     let [data, setData] = useState();
     const authStatusChecker = async () => {
         try {
-            let response = await fetch('https://food-finder-backend-guie.onrender.com/loginuser/status', {
+            let response = await fetch('https://food-finder-backend-1.onrender.com/loginuser/status', {
                 method: 'GET',
                 credentials: 'include',
                 headers: {

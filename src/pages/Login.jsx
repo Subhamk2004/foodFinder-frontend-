@@ -11,7 +11,7 @@ function Login() {
   let handleSubmit = async (e) => {
     console.log('request sent');
     e.preventDefault();
-    let response = await fetch('https://food-finder-backend-guie.onrender.com/loginuser', {
+    let response = await fetch('https://food-finder-backend-1.onrender.com/loginuser', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
